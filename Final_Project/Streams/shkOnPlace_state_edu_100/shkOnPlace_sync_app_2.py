@@ -129,11 +129,6 @@ create table if not exists {ch_meta_db_name}.{ch_meta_table}
 engine MergeTree order by (offset, dt_onplace)
 """
 
-sql_offset_1st_insert = f"""
-    insert into {ch_meta_db_name}.{ch_meta_table}
-    select argMax(offset, dt) as max_offset, max(dt) as max_dt from tmp.tmp_shkOnPlace_edu_1000
-"""
-
 sql_offset_insert = f"""
     insert into {ch_meta_db_name}.{ch_meta_table}
     select argMax(offset, dt) as max_offset, max(dt) as max_dt from tmp.tmp_shkOnPlace_edu_1000
