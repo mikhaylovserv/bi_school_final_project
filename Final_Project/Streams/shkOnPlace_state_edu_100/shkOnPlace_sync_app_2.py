@@ -16,7 +16,6 @@ os.environ['PYSPARK_SUBMIT_ARGS'] = '--jars org.apache.spark:spark-sql-kafka-0-1
 
 # Загружаем конекты. Не выкладываем в гит файл с конектами.
 with open('/opt/spark/Streams/credentials.json') as json_file:
-#with open('/Users/sergeymikhaylov/Desktop/WB/School/bi_school_hometasks/Final_Project/test/test_creds.json') as json_file:
     сonnect_settings = json.load(json_file)
 
 ch_db_name = "stage"
